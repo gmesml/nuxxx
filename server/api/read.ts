@@ -1,8 +1,8 @@
 
 export default defineEventHandler(async ({ context }) => {
-    const kvHandler : any = process.env.KV;
+    const kvHandler : any = context.cloudflare.env.KV;
 
-    const key = event?.context?.params?.key;
+    const key = context?.params?.key;
     const value = await kvHandler.get(key);
   
     return {
