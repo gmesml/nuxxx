@@ -7,11 +7,11 @@
 
 <script setup>
 
-  await $fetch("/server/api/write?key=some",  {
-    method: "POST",
-    body: "Trying to store data"
-  })
+  // await $fetch("/server/api/write?key=some",  {
+  //  method: "POST",
+  //  body: "Trying to store data"
+  // })
 
-  const some = await $fetch("/server/api/read?key=some");
+  const some = ref(await $fetch("/server/api/read?key=some"));
 
 </script>
